@@ -1,0 +1,11 @@
+Javier,234,Carlos
+Gustavo,432,Alexander
+Sofia,345,Victor
+Sahra,237,Alexander
+Fabio,111,Fabian
+Roberto,987,Valentina
+Albeiro,465,Luis
+Yoner,884,Victor
+Daniel,775,Victor
+Lucas,222,Fabian
+Carolina,2233,Alexander

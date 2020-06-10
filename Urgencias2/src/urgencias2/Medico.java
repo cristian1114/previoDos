@@ -1,3 +1,5 @@
+package urgencias2;
+
 
 import java.util.LinkedList;
 
