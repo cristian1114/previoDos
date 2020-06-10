@@ -20,11 +20,11 @@ public class Main {
         Medico y = new Medico("del", true);
         Medico z = new Medico("cristian", true);
         
-        Paciente q = new Paciente("Pedro", 3,e);
+        Paciente q = new Paciente("Pedro", 3,"Johan");
         //Paciente w = new Paciente("ro", false, 3, 2, "",a);
-        Paciente r = new Paciente("primero",4, a);
-        Paciente u = new Paciente("pr", 5, e);
-        Paciente n = new Paciente("cr", 3, z);
+        Paciente r = new Paciente("primero",4, "Pablo");
+        Paciente u = new Paciente("pr", 5, "cristian");
+        Paciente n = new Paciente("cr", 3, "Johan");
         
         
         LinkedList<Medico> medicos = new LinkedList();

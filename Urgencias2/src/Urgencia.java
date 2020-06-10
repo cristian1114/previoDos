@@ -45,7 +45,7 @@ public class Urgencia {
        for(Paciente p: pacientesAsegurados){
            
           System.out.println("nombre del asegurado: "+ p.getNombre()
-                  + " y su medico es : " + p.getMedicoHabitual().getNombre());
+                  + " y su medico es : " + p.getNombreMedicoHabitual());
            
        }
        
@@ -71,9 +71,10 @@ public class Urgencia {
             
 
           Paciente p = pacientesEnEspera.poll();
-          Medico d = p.getMedicoHabitual();
+          
           for(Medico m :  medicosEnGuardia){
-              if(m.getNombre().equals(d.getNombre())){
+              if(m.getNombre().equals(p.getNombreMedicoHabitual())){
+                  System.out.println("paciente: " + p.getNombre() + " medioc habitual: "+ p.getNombreMedicoHabitual());
                   m.agregarPaciente(p);
                   esta = true;
               }  
@@ -81,9 +82,17 @@ public class Urgencia {
           if(!esta){
               medicosEnGuardia.get(0).agregarPaciente(p);
           }
-       
-                
+           
 }         
+    public boolean idRepetida(int numeroAsegurado){
+        
+        for(Paciente p : pacientesEnEspera){
+            if(p.getNumeroAsegurado() == numeroAsegurado){
+             return true;   
+            }
+        }
+        return false;
+    }
     public String listarTurno(LinkedList<Medico> medicos){
         String imprimir = "";
          for(Medico m : medicosEnGuardia){

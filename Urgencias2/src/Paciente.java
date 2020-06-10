@@ -14,22 +14,22 @@ public class Paciente implements Comparable<Paciente> {
     private int numeroAsegurado;
     private int gradoEnfermedad;
     private String urgencia;
-    private Medico medicoHabitual;
+    private String nombreMedicoHabitual;
 
-    public Paciente(String nombre, int numeroAsegurado, Medico medicoHabitual) {
+    public Paciente(String nombre, int numeroAsegurado, String nombreMedicoHabitual) {
         this.nombre = nombre;
         this.numeroAsegurado = numeroAsegurado;
-        this.medicoHabitual = medicoHabitual;
+        this.nombreMedicoHabitual = nombreMedicoHabitual;
     }
 
     
 
-    public Medico getMedicoHabitual() {
-        return medicoHabitual;
+    public String getNombreMedicoHabitual() {
+        return nombreMedicoHabitual;
     }
 
-    public void setMedicoHabitual(Medico medicoHabitual) {
-        this.medicoHabitual = medicoHabitual;
+    public void setNombreMedicoHabitual(String nombreMedicoHabitual) {
+        this.nombreMedicoHabitual = nombreMedicoHabitual;
     }
 
     
