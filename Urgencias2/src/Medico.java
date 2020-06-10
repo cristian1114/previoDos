@@ -1,3 +1,6 @@
+
+import java.util.LinkedList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,24 +14,43 @@
 public class Medico {
     private String nombre;
     private boolean disponible;
-    private int pacientesAtendidos;
+    private LinkedList<Paciente> pacientesAtendidos;
 
-    public int getPacientesAtendidos() {
+    public LinkedList<Paciente> getPacientesAtendidos() {
         return pacientesAtendidos;
     }
 
-    public void setPacientesAtendidos(int pacientesAtendidos) {
+    public void setPacientesAtendidos(LinkedList<Paciente> pacientesAtendidos) {
         this.pacientesAtendidos = pacientesAtendidos;
-    }
-    
-    public void agregarPaciente(){
-        this.pacientesAtendidos++;
     }
 
-    public Medico(String nombre, boolean disponible, int pacientesAtendidos) {
+    public String pacientesAtendidos(){
+        String pacientes = "";
+        for(Paciente p : pacientesAtendidos){
+            pacientes += p.getNombre() + ", ";
+        }
+        return pacientes + "\n";
+    }
+    
+    public int getNumeroPacientesAtendidos(){
+        return pacientesAtendidos.size();
+    }
+
+    public Medico(String nombre, boolean disponible) {
         this.nombre = nombre;
         this.disponible = disponible;
-        this.pacientesAtendidos = pacientesAtendidos;
+        this.pacientesAtendidos = new LinkedList();
+    }  
+    
+    public void agregarPaciente(Paciente p){
+        pacientesAtendidos.add(p);
+    }
+    
+    public String pacienteActual(){
+        if(pacientesAtendidos.isEmpty()){
+            return "no tiene pacientes atendidos";
+        }
+        return pacientesAtendidos.get(0).getNombre();
     }
 
     public Medico() {

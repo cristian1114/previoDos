@@ -33,9 +33,7 @@ public class Urgencia {
         for(Medico m: medicos){
             if(m.isDisponible()){
                 medicosEnGuardia.add(m);
-                
-            }
-             
+            } 
         }
         
         
@@ -51,9 +49,6 @@ public class Urgencia {
            
        }
        
-        
-       
-        
     }
     
     public boolean insertarPaciente(String urgencias,Paciente paciente, int gradoEnfermedad){
@@ -79,26 +74,25 @@ public class Urgencia {
           Medico d = p.getMedicoHabitual();
           for(Medico m :  medicosEnGuardia){
               if(m.getNombre().equals(d.getNombre())){
-                  m.agregarPaciente();
+                  m.agregarPaciente(p);
                   esta = true;
               }  
           }
           if(!esta){
-              medicosEnGuardia.get(0).agregarPaciente();
+              medicosEnGuardia.get(0).agregarPaciente(p);
           }
        
                 
 }         
-    public void listarTurno(LinkedList<Medico> medicos){
+    public String listarTurno(LinkedList<Medico> medicos){
+        String imprimir = "";
          for(Medico m : medicosEnGuardia){
-          System.out.println("El medioco " + m.getNombre() + " ha atendido a: " + m.getPacientesAtendidos() 
-           + " pacientes");
+          imprimir += "\nEl medioco " + m.getNombre() + " ha atendido a: " + m.pacientesAtendidos()
+           + " numero de pacientes = "+ m.getNumeroPacientesAtendidos() + "\n paciente actual: " + m.pacienteActual();
         }
+         return imprimir;
     }
     
-    
-        
-
 }
         
 
